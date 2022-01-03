@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Vidly.ViewModels.RandomMovieViewModel
+@{
+    <h2>@Model.Movie.Title</h2>
+    @if (Model.Customers.Count == 0)
+    {
+        <p>No one has rented this movie yet</p>
+    } else
+    {
+        <ul>
+            @foreach(var customer in Model.Customers)
+            {
+                <li>@customer.Name</li>
+            }
+        </ul>
+    }
+}
